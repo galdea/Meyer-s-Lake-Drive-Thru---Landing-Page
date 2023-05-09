@@ -249,13 +249,21 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	font-weight: 300;
 	line-height: 30px;
 	margin: 0 auto;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 }
 header .intro-text {
-	padding-top: 350px;
-	padding-bottom: 200px;
+	padding-top: 200px;
 	text-align: center;
 }
+
+.transparent-box {
+	background-color: rgba(69, 3, 3, 0.227);
+	padding: 20px;
+	border-radius: 10px;
+	display: inline-block;
+  }
+  
+
 /* Features Section */
 #features {
 	padding: 100px 0;
@@ -276,6 +284,7 @@ header .intro-text {
 /* About Section */
 #about {
 	padding: 100px 0;
+	background: #f6f6f6;
 }
 #about h3 {
 	font-size: 22px;
