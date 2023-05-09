@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoAlbum from "react-photo-album";
+import Navigation from "./navigation";
 
 const photos = [
   { src: "img/drivethru/wineselection3.jpeg", width: 800, height: 600, title: "Wide wine selection" },
@@ -13,7 +14,9 @@ const photos = [
 ];
 
 function Gallery() {
-  return <PhotoAlbum layout="rows" photos={photos} />;
+  <Navigation />
+
+  return <PhotoAlbum layout="rows" id="gallery" photos={photos} />;
 }
 
 export default Gallery;
