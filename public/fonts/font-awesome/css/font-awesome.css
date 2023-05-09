@@ -803,11 +803,11 @@
 .fa-tachometer:before {
   content: "\f0e4";
 }
-.fa-comment-o:before {
-  content: "\f0e5";
+.fa-wine-bottle#-o:before {
+  content: "\f72f";
 }
-.fa-comments-o:before {
-  content: "\f0e6";
+.fa-wine-bottle#-o:before {
+  content: "\f72f";
 }
 .fa-flash:before,
 .fa-bolt:before {

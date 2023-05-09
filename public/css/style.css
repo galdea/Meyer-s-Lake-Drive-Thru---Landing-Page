@@ -63,7 +63,8 @@ hr {
 	background: #1E7A46;
 	margin-bottom: 20px;
 	border: 0;
-}
+} 
+
 /* Navigation */
 #menu {
 	padding: 15px;
@@ -181,12 +182,45 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	outline: none;
 	outline-offset: none;
 }
+
+#facebook {
+	position: absolute;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 5px;
+	padding: 0 10px;
+  }
+  
+  
+#facebook  {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #facebook i.fa {
+	font-size: 22px;
+	width: 48px;
+	height: 48px;
+	padding: 12px 14px;
+	border: 2px solid #608dfd;
+	color: #608dfd;
+	border-radius: 100%;
+	transition: all 0.3s;
+}
+#facebook i.fa:hover {
+	color: #043fd3;
+	background: #f7f7f7;
+}
+  
 /* Header Section */
 .intro {
 	display: table;
 	width: 100%;
 	padding: 0;
-	background: url(../img/intro-bg.jpg) center center no-repeat;
+	background: url(../img/drivethru/frontis.jpeg) center center no-repeat;
 	background-color: #e5e5e5;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -533,30 +567,7 @@ color: #777;
 #contact .contact-item i.fa {
 	margin-right: 10px;
 }
-#contact .social {
-	border-top: 1px solid rgba(255,255,255,0.15);
-	padding-top: 50px;
-	margin-top: 50px;
-	text-align: center;
-}
-#contact .social ul li {
-	display: inline-block;
-	margin: 0 20px;
-}
-#contact .social i.fa {
-	font-size: 22px;
-	width: 48px;
-	height: 48px;
-	padding: 12px 0;
-	border: 2px solid #fff;
-	color: #fff;
-	border-radius: 50%;
-	transition: all 0.3s;
-}
-#contact .social i.fa:hover {
-	color: #608dfd;
-	background: #fff;
-}
+
 /* Footer Section*/
 #footer {
 	background: #f6f6f6;

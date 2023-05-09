@@ -1,27 +1,23 @@
 {
     "Header": {
 
-        "title": "We are a Landing Page",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+        "title": "Meyer's Lake Beverage and Drive Thru",
+        "paragraph": "Welcome! We pride ourselves on offering a wide selection of drinks that cater to all tastes and preferences. Our team is dedicated to providing exceptional customer service, so you can sit back and enjoy a stress-free shopping experience. With our convenient drive-thru, you can easily grab your favorite beverage without ever leaving your car. So swing on by and let us take care of all your liquor needs!"
 
     },
     "About": {
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "paragraph": "We are currently uploading our catalogue to DoorDash so you have our extensive line of products at the reach of your thumb. Until then, you can order our items on",
         "Why": [
-            "Lorem ipsum dolor",
-            "Tempor incididunt",
-            "Lorem ipsum dolor",
-            "Incididunt ut labore"
+            "Beer",
+            "Wine",
+            "Spirits",
+            "Cold drinks"
         ],
         "Why2": [
-            "Aliquip ex ea commodo",
-            "Lorem ipsum dolor",
-            "Exercitation ullamco",
-            "Lorem ipsum dolor"
         ]
     },
     "Services": [{
-            "icon": "fa fa-wordpress",
+            "icon": "fa fa-facebook",
             "name": "Lorem ipsum dolor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
         },
@@ -105,32 +101,32 @@
         }
     ],
     "Contact": {
-        "address": "4321 California St, San Francisco, CA 12345 ",
-        "phone": "+1 123 456 1234",
-        "email": "info@company.com",
-        "facebook": "fb.com",
-        "twitter": "twitter.com",
+        "address": "4301 12th St Nw, Canton, OH 44708",
+        "phone": "+1 330-477-7008",
+        "email": "meyerslakedrivethru@gmail.com",
+        "facebook": "https://web.facebook.com/MeyersLakeDriveThru",
+        "Postmates": "twitter.com",
         "youtube": "youtube.com"
     },
     "Features": [{
-            "icon": "fa fa-comments-o",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "icon": "fa fa-beer",
+            "title": "Beer",
+            "text": "Check out our awesome variety of handcrafted and industrial beers"
         },
         {
-            "icon": "fa fa-bullhorn",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "icon": "fa fa-glass",
+            "title": "Spirits and Wine",
+            "text": "Probably the best wine selection in all of Canton! Spirits? We've got them."
         },
         {
-            "icon": "fa fa-group",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "icon": "fa fa-trophy",
+            "title": "Lottery tickets",
+            "text": "Get in on the excitement and try your luck with our lottery tickets! Stop by and pick up your chance to win big today."
         },
         {
-            "icon": "fa fa-magic",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "icon": "fa fa-truck",
+            "title": "U-Haul",
+            "text": "Say goodbye to the hassle, discover the convenience of renting your U-Haul from us right here!"
         }
     ]
 }

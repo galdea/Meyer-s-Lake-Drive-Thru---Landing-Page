@@ -40,10 +40,10 @@ export class App extends Component {
         <Header data={this.state.resumeData.Header}/>
         <Features data={this.state.resumeData.Features}/>
         <About  data={this.state.resumeData.About}/>
-        <Services  data={this.state.resumeData.Services}/>
+        {/* <Services  data={this.state.resumeData.Services}/> */}
         <Gallery />
-        <Testimonials  data={this.state.resumeData.Testimonials}/>
-        <Team  data={this.state.resumeData.Team}/>
+        {/* <Testimonials  data={this.state.resumeData.Testimonials}/> */}
+        {/* <Team  data={this.state.resumeData.Team}/> */}
         <Contact  data={this.state.resumeData.Contact}/>
       </div>
     )

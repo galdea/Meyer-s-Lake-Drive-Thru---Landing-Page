@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+/* Define a container for the grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-gap: 10px; /* Space between grid items */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
