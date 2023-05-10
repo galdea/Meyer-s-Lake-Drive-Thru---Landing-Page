@@ -42,12 +42,12 @@
 	left: 0;
 	width: 100%;
 	z-index: 99999;
-	text-align: center;
+	text-align: left;
 }
 .nivo-lightbox-nav { display: none; }
 .nivo-lightbox-prev {
 	position: absolute;
-	top: 50%;
+	top: 10%;
 	left: 0;
 }
 .nivo-lightbox-next {
