@@ -2,11 +2,11 @@ import React from "react";
 
 const Dogs = () => {
   return (
-    <div className="dogs-container">
+    <div>
       <img
-        className="dogs-img"
-        src="img/drivethru/dogsfrontis.png"
+        src="img/drivethru/dogsfrontis.jpg"
         alt="Thuny, Mr. Forrest and Osky Dosky"
+        style={{ width: "100%", objectFit: "cover" }}
       />
     </div>
   );

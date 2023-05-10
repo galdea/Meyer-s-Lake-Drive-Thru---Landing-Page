@@ -475,20 +475,6 @@ header .intro-text {
 	color: #888;
 }
 
-.dogs-container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #f2f2f2;
-	padding: 1rem;
-	box-sizing: border-box;
-  }
-  
-  .dogs-img {
-	max-width: 100%;
-	height: auto;
-  }
 /* Contact Section */
 #contact {
 	padding: 100px 0 60px 0;
