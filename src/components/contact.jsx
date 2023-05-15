@@ -1,28 +1,45 @@
 import React, { Component } from "react";
 
-export class Contact extends Component {
+class Contact extends Component {
+  state = {
+    name: "",
+    email: "",
+    message: ""
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
-  
+
+    const { name, email, message } = this.state;
+
+    const formData = {
+      "form-name": "contact",
+      name,
+      email,
+      message
+    };
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encodeFormData({ "form-name": "contact", name, email, message }),
+      body: this.encodeFormData(formData),
     })
       .then(() => {
         alert("Message sent, we will be contacting you soon!");
         window.location.reload();
       })
       .catch((error) => alert(error));
-  }
+  };
 
   encodeFormData = (data) => {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
-  }
+  };
 
   render() {
+    const { name, email, message } = this.state;
+
     return (
       <div>
         <div id="contact">
@@ -52,7 +69,7 @@ export class Contact extends Component {
                           className="form-control"
                           placeholder="Name"
                           required="required"
-                          value={this.state.name}
+                          value={name}
                           onChange={(e) => this.setState({ name: e.target.value })}
                         />
                         <p className="help-block text-danger"></p>
@@ -66,7 +83,7 @@ export class Contact extends Component {
                           className="form-control"
                           placeholder="Email"
                           required="required"
-                          value={this.state.email}
+                          value={email}
                           onChange={(e) => this.setState({ email: e.target.value })}
                         />
                         <p className="help-block text-danger"></p>
@@ -81,7 +98,7 @@ export class Contact extends Component {
                       rows="4"
                       placeholder="Message"
                       required
-                      value={this.state.message}
+                      value={message}
                       onChange={(e) => this.setState({ message: e.target.value })}
                     ></textarea>
                     <p className="help-block text-danger"></p>
