@@ -15,7 +15,7 @@ export class Contact extends Component {
                     will get back to you as soon as possible.
                   </p>
                 </div>
-                <form name="sentMessage" id="contactForm" noValidate>
+                <form name="contact" netlify id="contactForm" noValidate>
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
