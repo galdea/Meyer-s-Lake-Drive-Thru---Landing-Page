@@ -53,8 +53,7 @@ class Contact extends Component {
                     will get back to you as soon as possible.
                   </p>
                 </div>
-                <form netlify
-                  name="contact"
+                <form name="contact" netlify
                   onSubmit={this.handleSubmit}
                   id="contactForm"
                   noValidate
