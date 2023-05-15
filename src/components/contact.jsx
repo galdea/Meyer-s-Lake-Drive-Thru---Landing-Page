@@ -5,20 +5,13 @@ export class Contact extends Component {
   function handleSubmit(e) {
     e.preventDefault();
   
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-  
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
       .then(() => {
-        alert("Message sent, I will be contacting you soon!");
+        alert("Message sent, we will be contacting you soon!");
         window.location.reload();
       })
       .catch((error) => alert(error));
