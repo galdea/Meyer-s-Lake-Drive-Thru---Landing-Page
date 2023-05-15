@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
 export class Contact extends Component {
-  
-  function handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
   
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
+      body: this.encodeFormData({ "form-name": "contact", name, email, message }),
     })
       .then(() => {
         alert("Message sent, we will be contacting you soon!");
@@ -16,7 +15,13 @@ export class Contact extends Component {
       })
       .catch((error) => alert(error));
   }
-  
+
+  encodeFormData = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   render() {
     return (
       <div>
@@ -31,10 +36,13 @@ export class Contact extends Component {
                     will get back to you as soon as possible.
                   </p>
                 </div>
-                <form           netlify
-          name="contact"
-          onSubmit={handleSubmit}
- id="contactForm" noValidate>
+                <form
+                  name="contact"
+                  onSubmit={this.handleSubmit}
+                  id="contactForm"
+                  noValidate
+                  data-netlify="true"
+                >
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
@@ -44,6 +52,8 @@ export class Contact extends Component {
                           className="form-control"
                           placeholder="Name"
                           required="required"
+                          value={this.state.name}
+                          onChange={(e) => this.setState({ name: e.target.value })}
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -56,6 +66,8 @@ export class Contact extends Component {
                           className="form-control"
                           placeholder="Email"
                           required="required"
+                          value={this.state.email}
+                          onChange={(e) => this.setState({ email: e.target.value })}
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -69,6 +81,8 @@ export class Contact extends Component {
                       rows="4"
                       placeholder="Message"
                       required
+                      value={this.state.message}
+                      onChange={(e) => this.setState({ message: e.target.value })}
                     ></textarea>
                     <p className="help-block text-danger"></p>
                   </div>
@@ -79,6 +93,7 @@ export class Contact extends Component {
                 </form>
               </div>
             </div>
+
             <div className="col-md-3 col-md-offset-1 contact-info">
               <div className="contact-item">
                 <h3>Contact Info</h3>
