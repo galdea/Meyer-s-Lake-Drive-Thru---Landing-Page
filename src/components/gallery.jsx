@@ -10,7 +10,7 @@ const photos = [
   { src: "img/drivethru/winetastingwhileshop.jpeg", width: 800, height: 600, title: "Enjoy" },
   { src: "img/drivethru/beer selection.jpeg", width: 800, height: 600, title: "Wide selection of beers" },
   { src: "img/drivethru/coldbeer.jpeg", width: 800, height: 600, title: "Cold as the Rocky's" },
-  { src: "img/drivethru/IMG_1227.jpeg", width: 800, height: 600, title: "Rent a truck!" },
+  { src: "img/drivethru/IMG_1227.jpg", width: 800, height: 600, title: "Rent a truck!" },
 ];
 
 function Gallery() {
