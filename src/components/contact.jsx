@@ -12,31 +12,31 @@ class Contact extends Component {
 
     const { name, email, message } = this.state;
 
-    const formData = {
-      'form-name': 'contact',
-      name,
-      email,
-      message,
-    };
+    const formData = new FormData();
+    formData.append('form-name', 'contact');
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    function encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) =>
+            encodeURIComponent(key) + '=' + encodeURIComponent(data[key]),
+        )
+        .join('&');
+    }
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: this.encodeFormData(formData),
+      body: encode({ 'form-name': 'contact', name, email, message }),
     })
       .then(() => {
         alert('Message sent, we will be contacting you soon!');
         window.location.reload();
       })
       .catch((error) => alert(error));
-  };
-
-  encodeFormData = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]),
-      )
-      .join('&');
   };
 
   render() {
@@ -56,12 +56,13 @@ class Contact extends Component {
                   </p>
                 </div>
                 <form
-                  netlify
+                  data-netlify="true"
                   name="contact"
                   onSubmit={this.handleSubmit}
                   id="contactForm"
                   noValidate
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
