@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Contact extends Component {
   state = {
-    name: "",
-    email: "",
-    message: ""
+    name: '',
+    email: '',
+    message: '',
   };
 
   handleSubmit = (e) => {
@@ -13,19 +13,19 @@ class Contact extends Component {
     const { name, email, message } = this.state;
 
     const formData = {
-      "form-name": "contact",
+      'form-name': 'contact',
       name,
       email,
-      message
+      message,
     };
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: this.encodeFormData(formData),
     })
       .then(() => {
-        alert("Message sent, we will be contacting you soon!");
+        alert('Message sent, we will be contacting you soon!');
         window.location.reload();
       })
       .catch((error) => alert(error));
@@ -33,8 +33,10 @@ class Contact extends Component {
 
   encodeFormData = (data) => {
     return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]),
+      )
+      .join('&');
   };
 
   render() {
@@ -53,11 +55,12 @@ class Contact extends Component {
                     will get back to you as soon as possible.
                   </p>
                 </div>
-                <form name="contact" netlify
+                <form
+                  netlify
+                  name="contact"
                   onSubmit={this.handleSubmit}
                   id="contactForm"
                   noValidate
-                  data-netlify="true"
                 >
                   <div className="row">
                     <div className="col-md-6">
@@ -69,7 +72,9 @@ class Contact extends Component {
                           placeholder="Name"
                           required="required"
                           value={name}
-                          onChange={(e) => this.setState({ name: e.target.value })}
+                          onChange={(e) =>
+                            this.setState({ name: e.target.value })
+                          }
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -83,7 +88,9 @@ class Contact extends Component {
                           placeholder="Email"
                           required="required"
                           value={email}
-                          onChange={(e) => this.setState({ email: e.target.value })}
+                          onChange={(e) =>
+                            this.setState({ email: e.target.value })
+                          }
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -98,7 +105,9 @@ class Contact extends Component {
                       placeholder="Message"
                       required
                       value={message}
-                      onChange={(e) => this.setState({ message: e.target.value })}
+                      onChange={(e) =>
+                        this.setState({ message: e.target.value })
+                      }
                     ></textarea>
                     <p className="help-block text-danger"></p>
                   </div>
@@ -117,23 +126,23 @@ class Contact extends Component {
                   <span>
                     <i className="fa fa-map-marker"></i> Address
                   </span>
-                  {this.props.data ? this.props.data.address : "loading"}
+                  {this.props.data ? this.props.data.address : 'loading'}
                 </p>
               </div>
               <div className="contact-item">
                 <p>
                   <span>
                     <i className="fa fa-phone"></i> Phone
-                  </span>{" "}
-                  {this.props.data ? this.props.data.phone : "loading"}
+                  </span>{' '}
+                  {this.props.data ? this.props.data.phone : 'loading'}
                 </p>
               </div>
               <div className="contact-item">
                 <p>
                   <span>
                     <i className="fa fa-envelope-o"></i> Email
-                  </span>{" "}
-                  {this.props.data ? this.props.data.email : "loading"}
+                  </span>{' '}
+                  {this.props.data ? this.props.data.email : 'loading'}
                 </p>
               </div>
             </div>
@@ -142,7 +151,7 @@ class Contact extends Component {
         <div id="footer">
           <div className="container text-center">
             <p>
-              &copy; 2022 Designed by{" "}
+              &copy; 2022 Designed by{' '}
               <a href="http://www.gabrielaldea.com" rel="nofollow">
                 Gabriel Aldea
               </a>
