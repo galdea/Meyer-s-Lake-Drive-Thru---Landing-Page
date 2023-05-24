@@ -1,47 +1,49 @@
 import React, { Component } from 'react';
 
 class Contact extends Component {
-  state = {
-    name: '',
-    email: '',
-    message: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+    };
+  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { name, email, message } = this.state;
-
-    const formData = new FormData();
-    formData.append('form-name', 'contact');
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('message', message);
-
-    function encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) =>
-            encodeURIComponent(key) + '=' + encodeURIComponent(data[key]),
-        )
-        .join('&');
-    }
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', name, email, message }),
+      body: new URLSearchParams({
+        'form-name': 'contact',
+        name: name,
+        email: email,
+        message: message,
+      }).toString(),
     })
       .then(() => {
-        alert('Message sent, we will be contacting you soon!');
-        window.location.reload();
+        console.log('Form successfully submitted');
+        this.setState({
+          name: '',
+          email: '',
+          message: '',
+        });
       })
       .catch((error) => alert(error));
   };
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
+
   render() {
     const { name, email, message } = this.state;
-
+    const { address, phone, email: contactEmail } = this.props.data || {};
     return (
       <div>
         <div id="contact">
@@ -56,11 +58,13 @@ class Contact extends Component {
                   </p>
                 </div>
                 <form
-                  data-netlify="true"
                   name="contact"
+                  method="POST"
                   onSubmit={this.handleSubmit}
                   id="contactForm"
                   noValidate
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="row">
@@ -73,9 +77,7 @@ class Contact extends Component {
                           placeholder="Name"
                           required="required"
                           value={name}
-                          onChange={(e) =>
-                            this.setState({ name: e.target.value })
-                          }
+                          onChange={this.handleChange}
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -89,9 +91,7 @@ class Contact extends Component {
                           placeholder="Email"
                           required="required"
                           value={email}
-                          onChange={(e) =>
-                            this.setState({ email: e.target.value })
-                          }
+                          onChange={this.handleChange}
                         />
                         <p className="help-block text-danger"></p>
                       </div>
@@ -106,9 +106,7 @@ class Contact extends Component {
                       placeholder="Message"
                       required
                       value={message}
-                      onChange={(e) =>
-                        this.setState({ message: e.target.value })
-                      }
+                      onChange={this.handleChange}
                     ></textarea>
                     <p className="help-block text-danger"></p>
                   </div>
@@ -127,7 +125,7 @@ class Contact extends Component {
                   <span>
                     <i className="fa fa-map-marker"></i> Address
                   </span>
-                  {this.props.data ? this.props.data.address : 'loading'}
+                  {address || 'loading'}
                 </p>
               </div>
               <div className="contact-item">
@@ -135,7 +133,7 @@ class Contact extends Component {
                   <span>
                     <i className="fa fa-phone"></i> Phone
                   </span>{' '}
-                  {this.props.data ? this.props.data.phone : 'loading'}
+                  {phone || 'loading'}
                 </p>
               </div>
               <div className="contact-item">
@@ -143,7 +141,7 @@ class Contact extends Component {
                   <span>
                     <i className="fa fa-envelope-o"></i> Email
                   </span>{' '}
-                  {this.props.data ? this.props.data.email : 'loading'}
+                  {contactEmail || 'loading'}
                 </p>
               </div>
             </div>
