@@ -1,29 +1,6 @@
 import React, { Component } from "react";
 
 export class Contact extends Component {
-  
-  function handleSubmit(e) {
-    e.preventDefault();
-  
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-  
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
-    })
-      .then(() => {
-        alert("Message sent, I will be contacting you soon!");
-        window.location.reload();
-      })
-      .catch((error) => alert(error));
-  }
-  
   render() {
     return (
       <div>
@@ -38,10 +15,9 @@ export class Contact extends Component {
                     will get back to you as soon as possible.
                   </p>
                 </div>
-                <form           netlify
-          name="contact"
-          onSubmit={handleSubmit}
- id="contactForm" noValidate>
+                <form
+          netlify
+          name="contact">
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
